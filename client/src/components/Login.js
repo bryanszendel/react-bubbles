@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 
 const Login = (props) => {
@@ -26,28 +26,37 @@ const Login = (props) => {
         props.history.push('/bubbles')
       })
   }
+
+  const logout = e => {
+    e.preventDefault();
+    localStorage.removeItem('token')
+    props.history.push('/')
+  }
   
   return (
-    <>
-      <h1>Login Form</h1>
-      <form onSubmit={onLogin}>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={credentials.username}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={credentials.password}
-          onChange={handleChange}
-        />
-        <button>Log In</button>
-      </form>
-    </>
+    <div className="centering">
+      <div className="form-container">
+        <h1>Login Form</h1>
+        <form onSubmit={onLogin}>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={credentials.username}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={credentials.password}
+            onChange={handleChange}
+          />
+          <button>Log In</button>
+          <button onClick={e => logout(e)}>Log Out</button>
+        </form>
+      </div>
+    </div>
   );
 };
 

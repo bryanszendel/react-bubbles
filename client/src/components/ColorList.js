@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const initialColor = {
@@ -8,7 +7,7 @@ const initialColor = {
 };
 
 const ColorList = ({ colors, updateColors }) => {
-  console.log(colors);
+  console.log('colors', colors);
   const [editing, setEditing] = useState(false);
   const [adding, setAdding] = useState(true);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
@@ -26,12 +25,12 @@ const ColorList = ({ colors, updateColors }) => {
       .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, colorToEdit)
       .then(res => {
         console.log('PUT response', res)
-
       })
       .catch(err => console.log(err.response))
   };
 
   const addNewColor = e => {
+    // e.preventDefault()
     axiosWithAuth()
     .post(`http://localhost:5000/api/colors`, color)
     .then(res => {
@@ -71,7 +70,7 @@ const ColorList = ({ colors, updateColors }) => {
         ))}
       </ul>
       {editing && (
-        <form onSubmit={saveEdit}>
+        <form onSubmit={e => saveEdit(e)}>
           <legend>edit color</legend>
           <label>
             color name:
@@ -95,7 +94,7 @@ const ColorList = ({ colors, updateColors }) => {
             />
           </label>
           <div className="button-row">
-            <button type="submit" onClick={() => saveEdit()}>save</button>
+            <button type="submit" onClick={(e) => saveEdit(e)}>save</button>
             <button onClick={() => {
                 setEditing(false)
                 setAdding(true)
@@ -107,7 +106,7 @@ const ColorList = ({ colors, updateColors }) => {
 
 {/* // New Color Form // */}
         {adding && (
-        <form onSubmit={addNewColor}>
+        <form onSubmit={e => addNewColor(e)}>
           <legend>add new color</legend>
           <label>
             color name:
@@ -132,7 +131,7 @@ const ColorList = ({ colors, updateColors }) => {
             />
           </label>
           <div className="button-row">
-            <button type="submit" onClick={() => saveEdit()}>save</button>
+            <button type="submit" onClick={(e) => saveEdit(e)}>save</button>
             <button onClick={() => {
               setEditing(false)
               setAdding(true)
