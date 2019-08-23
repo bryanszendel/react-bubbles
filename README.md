@@ -28,8 +28,14 @@ In this project you will create a login page and request a token from the server
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Explain what a token is used for.
-- [ ] What steps can you take in your web apps to keep your data secure?
+- [X] Explain what a token is used for.
+
+A token is used to validate whether or not a user has approval to view certain content. A token is retrieved via login and is stored in the user's browser local storage.
+
+- [X] What steps can you take in your web apps to keep your data secure?
+
+Athorization is important to keep data secure. It is not best practice to simply create an application that anyone can modify data for. You must validate login information to determine who specifically has access to that data. Then use tokenized requests to update data.
+
 - [ ] Describe how web servers work.
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
@@ -38,18 +44,18 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo (Not Lambda's by mistake!).
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
-- [ ] **RUN** `yarn install or npm install` at the root to retrieve all the dependencies for the node server. You will not need to create any react apps here nor will you need to install any other dependencies. You should have all you need in this repo.
-- [ ] **LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
-- [ ] **RUN** `yarn start or npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-- [ ] **LOOK** at your `client` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ] **cd** into `client` and run `yarn install or npm install` to retrieve the client side dependencies.
-- [ ] **RUN** `yarn start or npm start` to fire up your React application.
+- [X] Create a forked copy of this project.
+- [X] Add PM as collaborator on Github.
+- [X] Clone your OWN version of Repo (Not Lambda's by mistake!).
+- [X] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [X] Implement the project on this Branch, committing changes regularly.
+- [X] Push commits: git push origin `<firstName-lastName>`.
+- [X] **RUN** `yarn install or npm install` at the root to retrieve all the dependencies for the node server. You will not need to create any react apps here nor will you need to install any other dependencies. You should have all you need in this repo.
+- [X] **LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
+- [X] **RUN** `yarn start or npm start` to get your API up and running on `http://localhost:5000`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+- [X] **LOOK** at your `client` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [X] **cd** into `client` and run `yarn install or npm install` to retrieve the client side dependencies.
+- [X] **RUN** `yarn start or npm start` to fire up your React application.
 
 Follow these steps for completing your project:
 
@@ -65,10 +71,10 @@ The MVP of this project will be broken up between 2 stages. Follow each step.
 
 Build a login form to authenticate your users.
 
-- [ ] Construct an AXIOS request to retrieve a token from the server. You'll use this token to interact with the API
-- [ ] Save the token to localStorage
-- [ ] Build a `axiosWithAuth` module to create an instance of axios with the authentication header
-- [ ] Build a `PrivateRoute` component and use it to protect a route that renders the `BubblesPage` component
+- [X] Construct an AXIOS request to retrieve a token from the server. You'll use this token to interact with the API
+- [X] Save the token to localStorage
+- [X] Build a `axiosWithAuth` module to create an instance of axios with the authentication header
+- [X] Build a `PrivateRoute` component and use it to protect a route that renders the `BubblesPage` component
 
 ### Stage 2 - Consuming the API
 
