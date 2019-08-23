@@ -36,9 +36,16 @@ A token is used to validate whether or not a user has approval to view certain c
 
 Athorization is important to keep data secure. It is not best practice to simply create an application that anyone can modify data for. You must validate login information to determine who specifically has access to that data. Then use tokenized requests to update data.
 
-- [ ] Describe how web servers work.
-- [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+- [X] Describe how web servers work.
 
+Web servers store data and take in requests from clients (computers, users) to access that data. A server usually only provides that data if it is requested by the user in the URL which is basically like the address for the server. By submitting the URL, the request is made and the server provides the information/data and the client/computer displays that data.
+
+- [X] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+
+C - Create (post)
+R - Read (get)
+U - Update (put)
+D - Delete (delete)
 
 ## Project Set Up
 
@@ -59,9 +66,9 @@ Follow these steps to set up and work on your project:
 
 Follow these steps for completing your project:
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
-- [ ] Add your Project Manager as a Reviewer on the Pull-request
-- [ ] PM then will count the HW as done by  merging the branch back into master.
+- [X] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
+- [X] Add your Project Manager as a Reviewer on the Pull-request
+- [X] PM then will count the HW as done by  merging the branch back into master.
 
 ## Minimum Viable Product
 
@@ -80,7 +87,7 @@ Build a login form to authenticate your users.
 
 - [X] When `BubblePages` renders, make a GET request to fetch the color data for your bubbles.
 - [X] In `ColorList.js`, complete the `saveEdit` and `deleteColor` functions to make AJAX requests to the API to edit/delete data
-- [ ] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
+- [X] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
 
 ### API Documentation
 
